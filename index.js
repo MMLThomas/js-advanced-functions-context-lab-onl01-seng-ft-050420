@@ -10,6 +10,21 @@
   };
 }
 
+function createEmployeeRecords(array){
+  return array.map(element => createEmployeeRecord(element))
+}
+
+function createTimeInEvent(obj, ds){
+  let dateTime = ds.split(' ')
+  obj.timeInEvents.push(
+    {
+      type: 'TimeIn',
+      hour: parseInt(dateTime[1]),
+      date: dateTime[0]
+    })
+    return this
+}
+
 /*
  We're giving you this function. Take a look at it, you might see some usage
  that's new and different. That's because we're avoiding a well-known, but
